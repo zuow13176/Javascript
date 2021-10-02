@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html>
 <body>
-<form name="calculator">
+<form name="cal">
     <table border="1" cellspacing= 1 cellpadoing=1>
     <tr>
-    <th colspan=5 rowspan=1><input id="text1" type="text" value="" /></th>
+    <th colspan=5 rowspan=1><input name="result" type="text" value="" /></th>
     </tr>
     
     <tr>
-    <th colspan=2 rowspan=1><input id="Button1" type="button" value="Clear" onclick="calculator.text1.value = ''"/></th>
-    <th colspan=1 rowspan=1><input id="Button2" type="button" value="=" onclick="calculator.text1.value = eval(calculator.text1.value)"/></th>
-    <th colspan=1 rowspan=1><input id="Button3" type="button" value="(" onclick="calculator.text1.value += '('"/></th>
-    <th colspan=1 rowspan=1><input id="Button4" type="button" value=")" onclick="calculator.text1.value += ')'"/></th>
+    <th colspan=2 rowspan=1><input name="clear" type="button" value="Clear" onclick="Clear()"/></th>
+    <th colspan=1 rowspan=1><input name="equal" type="button" value="=" onclick="Calculator()"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="(" onclick="main(0)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value=")" onclick="main(1)"/></th>
     </tr>
     
     <tr>
-    <th colspan=1 rowspan=1><input id="Button5" type="button" value="*" onclick="calculator.text1.value += '*'"/></th>
-    <th colspan=1 rowspan=1><input id="Button6" type="button" value="/" onclick="calculator.text1.value += '/'"/></th>
-    <th colspan=1 rowspan=1><input id="Button7" type="button" value="+" onclick="calculator.text1.value += '+'"/></th>
-    <th colspan=1 rowspan=1><input id="Button8" type="button" value="-" onclick="calculator.text1.value += '-'"/></th>
-    <th colspan=1 rowspan=1><input id="Button9" type="button" value="." onclick="calculator.text1.value += '.'"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="*" onclick="main(2)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="/" onclick="main(3)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="+" onclick="main(4)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="-" onclick="main(5)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="." onclick="main(6)"/></th>
     </tr>
     
     <tr>
-    <th colspan=1 rowspan=1><input id="Button10" type="button" value="1" onclick="calculator.text1.value += '1'"/></th>
-    <th colspan=1 rowspan=1><input id="Button11" type="button" value="2" onclick="calculator.text1.value += '2'"/></th>
-    <th colspan=1 rowspan=1><input id="Button12" type="button" value="3" onclick="calculator.text1.value += '3'"/></th>
-    <th colspan=1 rowspan=1><input id="Button13" type="button" value="4" onclick="calculator.text1.value += '4'"/></th>
-    <th colspan=1 rowspan=1><input id="Button14" type="button" value="5" onclick="calculator.text1.value += '5'"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="1" onclick="main(7)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="2" onclick="main(8)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="3" onclick="main(9)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="4" onclick="main(10)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="5" onclick="main(11)"/></th>
     </tr>
     
     <tr>
-    <th colspan=1 rowspan=1><input id="Button15" type="button" value="6" onclick="calculator.text1.value += '6'"/></th>
-    <th colspan=1 rowspan=1><input id="Button16" type="button" value="7" onclick="calculator.text1.value += '7'"/></th>
-    <th colspan=1 rowspan=1><input id="Button17" type="button" value="8" onclick="calculator.text1.value += '8'"/></th>
-    <th colspan=1 rowspan=1><input id="Button18" type="button" value="9" onclick="calculator.text1.value += '9'"/></th>
-    <th colspan=1 rowspan=1><input id="Button19" type="button" value="0" onclick="calculator.text1.value += '0'"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="6" onclick="main(12)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="7" onclick="main(13)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="8" onclick="main(14)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="9" onclick="main(15)"/></th>
+    <th colspan=1 rowspan=1><input name="num" type="button" value="0" onclick="main(16)"/></th>
     </tr>
     </table>
 </form>
+
+<script type="text/javascript">
+    var n = "";
+
+    function Clear() {
+        document.cal.result.value = "";
+    }
+
+    function main(i) {
+        var x = document.getElementsByName("num")[i].value;
+        n = n + x;
+        document.cal.result.value = n;
+    }
+
+    function Calculator(){
+        var result = eval(n);
+        document.cal.result.value = result;
+        n = "";
+    }
+</script>
 
 </body>
 </html>
