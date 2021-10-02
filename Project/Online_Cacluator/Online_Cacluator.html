@@ -1,64 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <body>
-<form name="cal">
-    <table border="1" cellspacing= 1 cellpadoing=1>
-    <tr>
-    <th colspan=5 rowspan=1><input name="result" type="text" value="" /></th>
-    </tr>
-    
-    <tr>
-    <th colspan=2 rowspan=1><input name="clear" type="button" value="Clear" onclick="Clear()"/></th>
-    <th colspan=1 rowspan=1><input name="equal" type="button" value="=" onclick="Calculator()"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="(" onclick="main(0)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value=")" onclick="main(1)"/></th>
-    </tr>
-    
-    <tr>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="*" onclick="main(2)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="/" onclick="main(3)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="+" onclick="main(4)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="-" onclick="main(5)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="." onclick="main(6)"/></th>
-    </tr>
-    
-    <tr>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="1" onclick="main(7)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="2" onclick="main(8)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="3" onclick="main(9)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="4" onclick="main(10)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="5" onclick="main(11)"/></th>
-    </tr>
-    
-    <tr>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="6" onclick="main(12)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="7" onclick="main(13)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="8" onclick="main(14)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="9" onclick="main(15)"/></th>
-    <th colspan=1 rowspan=1><input name="num" type="button" value="0" onclick="main(16)"/></th>
-    </tr>
-    </table>
-</form>
+    <form name="cal">
+        <table border="1" cellspacing=1 cellpadoing=1>
+            <tr>
+                <th colspan=5 rowspan=1><input name="result" type="text" value="" /></th>
+            </tr>
 
-<script type="text/javascript">
-    var n = "";
+            <tr>
+                <th colspan=2 rowspan=1><input name="clear" type="button" value="Clear" onclick="Clear()" /></th>
+                <th colspan=1 rowspan=1><input name="equal" type="button" value="=" onclick="Calculator()" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="(" onclick="main(0)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value=")" onclick="main(1)" /></th>
+            </tr>
 
-    function Clear() {
-        document.cal.result.value = "";
-    }
+            <tr>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="*" onclick="main(2)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="/" onclick="main(3)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="+" onclick="main(4)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="-" onclick="main(5)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="." onclick="main(6)" /></th>
+            </tr>
 
-    function main(i) {
-        var x = document.getElementsByName("num")[i].value;
-        n = n + x;
-        document.cal.result.value = n;
-    }
+            <tr>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="1" onclick="main(7)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="2" onclick="main(8)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="3" onclick="main(9)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="4" onclick="main(10)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="5" onclick="main(11)" /></th>
+            </tr>
 
-    function Calculator(){
-        var result = eval(n);
-        document.cal.result.value = result;
-        n = "";
-    }
-</script>
+            <tr>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="6" onclick="main(12)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="7" onclick="main(13)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="8" onclick="main(14)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="9" onclick="main(15)" /></th>
+                <th colspan=1 rowspan=1><input name="num" type="button" value="0" onclick="main(16)" /></th>
+            </tr>
+        </table>
+    </form>
+
+    <script type="text/javascript">
+        var n = "";
+
+        function Clear() {
+            document.cal.result.value = "";
+        }
+
+        function main(i) {
+            var x = document.getElementsByName("num")[i].value;
+            n = n + x;
+            document.cal.result.value = n;
+        }
+
+        function Calculator() {
+            var result = eval(n);
+            document.cal.result.value = result;
+            n = "";
+        }
+    </script>
 
 </body>
+
 </html>
